@@ -28,23 +28,33 @@
   	<description></description>
   	<servlet-class>com.todo.controller.DeleteTaskServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UpdateTaskServlet</servlet-name>
+  	<display-name>UpdateTaskServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.todo.controller.UpdateTaskServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>HelloServlet</servlet-name>
-  	<url-pattern>/Hello</url-pattern>
+  	<url-pattern>/hello</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>TaskServlet</servlet-name>
-  	<url-pattern>/TaskServlet</url-pattern>
+  	<url-pattern>/tasks</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>CreateNewTaskServlet</servlet-name>
-  	<url-pattern>/Create</url-pattern>
+  	<url-pattern>/create</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>DeleteTaskServlet</servlet-name>
-  	<url-pattern>/DeleteTaskServlet</url-pattern>
+  	<url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateTaskServlet</servlet-name>
+  	<url-pattern>/UpdateTaskServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
         <welcome-file>taskList.jsp</welcome-file>
-    </welcome-file-list>
+   </welcome-file-list>
 </web-app>

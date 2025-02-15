@@ -11,7 +11,6 @@
     <h1>To-Do List</h1>
     <table border="1">
         <tr>
-            <th>ID</th>
             <th>Title</th>
             <th>Description</th>
             <th>Status</th>
@@ -24,7 +23,6 @@
                         for (TaskDTO task : tasks) {
         %>
         <tr>
-            <td><%= task.getId() %></td>
             <td><%= task.getTitle() %></td>
             <td><%= task.getDescription() %></td>
             <td><%= task.isStatus() ? "Completed" : "Pending" %></td>
@@ -34,6 +32,12 @@
 					<input type="hidden" name="taskId" value=<%= task.getId() %>>
 					<button type="submit">
 						Delete
+					</button>
+				</form>
+				<form action="UpdateTaskServlet" method="POST">
+					<input type="hidden" name="taskId" value=<%= task.getId() %>>
+					<button type="submit">
+						Update
 					</button>
 				</form>
 			</td>

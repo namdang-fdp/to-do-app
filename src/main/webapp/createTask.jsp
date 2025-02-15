@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="Create" method="POST">
+	<form action="create" method="POST">
 		<div>
 			<label for="title">Title: </label>
 			<input type="text" id="title" name="title" placeholder="Drink water" required="required">

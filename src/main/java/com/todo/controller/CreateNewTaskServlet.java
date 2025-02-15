@@ -38,7 +38,7 @@ public class CreateNewTaskServlet extends HttpServlet {
 			
 			boolean success = taskDAO.createNewTask(newTask);
 			if(success) {
-				response.sendRedirect("TaskServlet");
+				response.sendRedirect("tasks");
 			} else {
 				request.setAttribute("error", "Fail to create new Task");
 				request.getRequestDispatcher("createTask.jsp").forward(request, response);
