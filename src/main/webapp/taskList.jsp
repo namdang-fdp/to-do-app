@@ -28,13 +28,13 @@
             <td><%= task.isStatus() ? "Completed" : "Pending" %></td>
             <td><%= task.getDueDate() %></td>
             <td>
-				<form action="DeleteTaskServlet" method="POST">
+				<form action="delete" method="POST">
 					<input type="hidden" name="taskId" value=<%= task.getId() %>>
 					<button type="submit">
 						Delete
 					</button>
 				</form>
-				<form action="UpdateTaskServlet" method="POST">
+				<form action="update" method="POST">
 					<input type="hidden" name="taskId" value=<%= task.getId() %>>
 					<button type="submit">
 						Update

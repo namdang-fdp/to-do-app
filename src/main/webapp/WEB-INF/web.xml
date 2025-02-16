@@ -52,7 +52,7 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>UpdateTaskServlet</servlet-name>
-  	<url-pattern>/UpdateTaskServlet</url-pattern>
+  	<url-pattern>/update</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
         <welcome-file>taskList.jsp</welcome-file>

@@ -63,6 +63,22 @@ public class TaskDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public TaskDTO getTaskById(int taskId) {
+		TaskDTO returnTaskDTO = new TaskDTO();
+		try {
+			Connection con = DBUtils.getConnection();
+			String sql = "SELECT FROM tasks WHERE id = ?";
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setInt(1, taskId);
+			stmt.execute();
+			con.close();
+		} catch(SQLException e) {
+			System.out.println("Something error when executing SQL statement " + e.getMessage());
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 
 
