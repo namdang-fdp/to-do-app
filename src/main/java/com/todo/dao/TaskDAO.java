@@ -68,16 +68,27 @@ public class TaskDAO {
 		TaskDTO returnTaskDTO = new TaskDTO();
 		try {
 			Connection con = DBUtils.getConnection();
-			String sql = "SELECT FROM tasks WHERE id = ?";
+			String sql = "SELECT title, description, dueDate FROM tasks WHERE id = ?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, taskId);
-			stmt.execute();
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				returnTaskDTO.setTitle(rs.getString("title"));
+				returnTaskDTO.setDescription(rs.getString("description"));
+				returnTaskDTO.setDueDate(rs.getDate("dueDate"));
+				System.out.println(returnTaskDTO.getTitle());
+				System.out.println(returnTaskDTO.getDescription());
+				System.out.println(returnTaskDTO.getDueDate());
+			} else {
+				System.out.println("There isn't any task with id " + taskId);
+				return null;
+			}
 			con.close();
 		} catch(SQLException e) {
 			System.out.println("Something error when executing SQL statement " + e.getMessage());
 			e.printStackTrace();
 		}
-		return null;
+		return returnTaskDTO;
 	}
 
 

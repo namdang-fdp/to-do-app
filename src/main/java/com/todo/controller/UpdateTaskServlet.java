@@ -15,10 +15,12 @@ public class UpdateTaskServlet extends HttpServlet {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String idParam = request.getParameter("id");
+		System.out.println("In here");
+		String idParam = request.getParameter("taskId");
 		int id = Integer.parseInt(idParam);
 		TaskDAO taskDao = new TaskDAO();
 		TaskDTO task = taskDao.getTaskById(id);
+		request.setAttribute("task", task);
 		request.getRequestDispatcher("updateTask.jsp").forward(request, response);
 	}
 
