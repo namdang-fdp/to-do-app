@@ -15,7 +15,6 @@ public class UpdateTaskServlet extends HttpServlet {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("In here");
 		String idParam = request.getParameter("taskId");
 		int id = Integer.parseInt(idParam);
 		TaskDAO taskDao = new TaskDAO();

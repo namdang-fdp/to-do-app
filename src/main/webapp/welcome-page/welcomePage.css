@@ -1,0 +1,200 @@
+@charset "ISO-8859-1";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  line-height: 1.6;
+  color: #333;
+  background: rgb(247,247,249);
+  background: linear-gradient(to bottom, rgba(247,247,249,1) 66%, rgba(94,90,90,1) 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 8px 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  right: 0px;
+  left: 0px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(9, 9, 9);
+  text-shadow: 1px 1px 2px rgba(5, 5, 5, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-button {
+  color: rgb(9, 9, 9);;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.nav-button:hover {
+  background-color: #cacccc;
+}
+
+.nav-button.register {
+  background-color: #cacccc;
+  color: rgb(9, 9, 9);;
+}
+
+.nav-button.register:hover {
+  background-color: #8e8f90;
+}
+
+
+main {
+  text-align: center;
+  padding: 60px 0;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: rgb(9, 9, 9);
+}
+
+.intro {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.primary {
+  background-color: #cacccc;
+  color: rgb(9, 9, 9);
+}
+
+.primary:hover {
+  background-color: #8e8f90;
+}
+
+.secondary {
+  background-color: white;
+  color: rgb(9, 9, 9);
+  border: 2px solid #0d0d0d;
+}
+
+.secondary:hover {
+  background-color: #8e8f90;
+}
+
+.join-section {
+  padding: 60px 0;
+}
+
+.join-card {
+  background-color: white;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(9, 9, 9);
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-prompt {
+  font-size: 14px;
+}
+
+.text-link {
+  color: #e37a7a;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 28px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-button {
+    width: 45%;
+    text-align: center;
+  }
+}
+

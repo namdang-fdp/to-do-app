@@ -55,6 +55,6 @@
   	<url-pattern>/update</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
-        <welcome-file>taskList.jsp</welcome-file>
+        <welcome-file>welcome-page/welcomePage.jsp</welcome-file>
    </welcome-file-list>
 </web-app>

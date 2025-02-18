@@ -76,9 +76,6 @@ public class TaskDAO {
 				returnTaskDTO.setTitle(rs.getString("title"));
 				returnTaskDTO.setDescription(rs.getString("description"));
 				returnTaskDTO.setDueDate(rs.getDate("dueDate"));
-				System.out.println(returnTaskDTO.getTitle());
-				System.out.println(returnTaskDTO.getDescription());
-				System.out.println(returnTaskDTO.getDueDate());
 			} else {
 				System.out.println("There isn't any task with id " + taskId);
 				return null;
