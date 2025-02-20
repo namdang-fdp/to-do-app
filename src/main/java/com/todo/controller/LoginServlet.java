@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.todo.dao.TaskDAO;
 import com.todo.dao.UserDAO;
@@ -35,14 +36,14 @@ public class LoginServlet extends HttpServlet {
 		user.setUsername(username);
 		user.setPassword(password);
 		int userID = userDao.userLogin(user);
+		user.setId(userID);
 		if(userID >= 1) {
-			List<TaskDTO> tasks = taskDao.getAllTasks(userID);
-			request.setAttribute("tasks", tasks);
-			request.getRequestDispatcher("taskList.jsp").forward(request, response);
+			HttpSession session = request.getSession();
+			session.setAttribute("users", user);
+			response.sendRedirect("tasks");
 		} else {
 			request.setAttribute("errorMessage", "Your account hasn't existed. Please register or check your username and password");
 			request.getRequestDispatcher("login-page/loginPage.jsp").forward(request, response);
 		}
 	}
-
 }

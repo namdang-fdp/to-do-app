@@ -7,9 +7,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.todo.dao.TaskDAO;
 import com.todo.model.TaskDTO;
+import com.todo.model.UserDTO;
 
 public class TaskServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -18,7 +20,9 @@ public class TaskServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<TaskDTO> tasks = taskDao.getAllTasks(0);
+		HttpSession session = request.getSession();
+		UserDTO user = (UserDTO)session.getAttribute("users");
+		List<TaskDTO> tasks = taskDao.getAllTasks(user.getId());
 		request.setAttribute("tasks", tasks);
 		request.getRequestDispatcher("taskList.jsp").forward(request, response);
 	}
