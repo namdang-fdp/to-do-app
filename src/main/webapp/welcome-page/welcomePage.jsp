@@ -13,8 +13,8 @@
             <nav>
                 <h1 class="logo">TaskMaster</h1>
                 <div class="nav-links">
-                    <a href="#" class="nav-button">Login</a>
-                    <a href="#" class="nav-button register">Register</a>
+                    <a href="/todoapp/login" class="nav-button">Login</a>
+                    <a href="/todoapp/register" class="nav-button register">Register</a>
                 </div>
             </nav>
         </header>
@@ -27,7 +27,7 @@
             <img src="/todoapp/resources/images/HardWorking-removebg-preview.png" alt="TaskMaster Image">
 
             <div class="cta-buttons">
-                <a href="#" class="button primary">Get Started</a>
+                <a href="/todoapp/login" class="button primary">Get Started</a>
                 <a href="#" class="button secondary">Learn More</a>
             </div>
         </main>
@@ -35,9 +35,9 @@
         <section class="join-section">
             <div class="join-card">
                 <h3>Join TaskMaster Today</h3>
-                <a href="#" class="button primary full-width">Create an Account</a>
+                <a href="/todoapp/register" class="button primary full-width">Create an Account</a>
                 <p class="login-prompt">
-                    Already have an account? <a href="#" class="text-link">Log in</a>
+                    Already have an account? <a href="/todoapp/login" class="text-link">Log in</a>
                 </p>
             </div>
         </section>

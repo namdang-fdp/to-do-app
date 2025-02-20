@@ -18,7 +18,7 @@ public class TaskServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<TaskDTO> tasks = taskDao.getAllTasks();
+		List<TaskDTO> tasks = taskDao.getAllTasks(0);
 		request.setAttribute("tasks", tasks);
 		request.getRequestDispatcher("taskList.jsp").forward(request, response);
 	}

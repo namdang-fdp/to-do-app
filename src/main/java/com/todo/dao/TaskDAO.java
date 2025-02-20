@@ -11,12 +11,15 @@ import com.todo.model.TaskDTO;
 import com.todo.utils.DBUtils;
 
 public class TaskDAO {
-	public List<TaskDTO> getAllTasks() {
+	public List<TaskDTO> getAllTasks(int userID) {
 		List<TaskDTO> tasks = new ArrayList<TaskDTO>();
 		try {
 			Connection con = DBUtils.getConnection();
-			String sql = "SELECT id, title, description, status, dueDate FROM tasks ";
+			String sql = "SELECT t.id ,t.title, t.description, t.status, t.dueDate " +
+						"FROM tasks t JOIN users u ON t.userID = u.userID " + 
+						"WHERE u.userID = ? ";	
 			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setInt(1, userID);
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				tasks.add(new TaskDTO(rs.getInt("id"), rs.getString("title"), 
@@ -24,7 +27,7 @@ public class TaskDAO {
 			}
 			con.close();
 		} catch(SQLException e) {
-			System.out.println("Something error when executing SQL statement " +  e.getMessage());
+			System.out.println("Something error when executing SQL statement (taskDao) " +  e.getMessage());
 			e.printStackTrace();
 		}
 		return tasks;

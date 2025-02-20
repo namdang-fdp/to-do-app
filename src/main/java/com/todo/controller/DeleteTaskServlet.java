@@ -34,7 +34,7 @@ public class DeleteTaskServlet extends HttpServlet {
 			System.out.println("Something error in delete task servlet!");
 			e.printStackTrace();
 		}
-		List<TaskDTO> tasks = taskDao.getAllTasks();
+		List<TaskDTO> tasks = taskDao.getAllTasks( 0);
 		request.setAttribute("tasks", tasks);
 		request.getRequestDispatcher("taskList.jsp").forward(request, response);
 	}
